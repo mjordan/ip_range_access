@@ -1,0 +1,6 @@
+name: 'IP Range Access'
+description: "Allows access to entities by IP address range."
+type: module
+core: 8.x
+dependencies:
+  - context
