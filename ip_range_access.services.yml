@@ -1,4 +1,0 @@
-services:
-  ip_range_access.check_ip_address:
-    class: Drupal\ip_range_access\UserIpAddress
-    arguments: ['@request_stack']
