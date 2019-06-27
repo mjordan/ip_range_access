@@ -32,6 +32,10 @@ See [issue list](https://github.com/mjordan/ip_range_access/issues).
 
 * [Mark Jordan](https://github.com/mjordan)
 
+## Contributing
+
+Bug reports, improvements, feature requests, and PRs welcome. Before you open a pull request, please open an issue.
+
 ## License
 
 [GPLv2](http://www.gnu.org/licenses/gpl-2.0.txt)
