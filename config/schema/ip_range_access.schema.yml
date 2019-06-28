@@ -1,0 +1,6 @@
+condition.plugin.user_ip_address:
+  type: condition.plugin
+  mapping:
+    ip_ranges:
+      type: text
+      label: 'IP ranges'
