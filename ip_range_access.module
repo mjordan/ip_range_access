@@ -26,7 +26,7 @@ function ip_range_access_entity_view(array &$build, EntityInterface $entity, Ent
   if ($entity === $current_entity) {
     if (\Drupal::moduleHandler()->moduleExists('context')) {
       $context_manager = \Drupal::service('context.manager');
-      // If there are multiple contexts that block access, it's OK to use the last one.
+      // If there are multiple contexts that block access, it's OK to use the first one.
       foreach ($context_manager->getActiveReactions('\Drupal\ip_range_access\Plugin\ContextReaction\DenyAccessReaction') as $reaction) {
         $reaction->execute();
       }
