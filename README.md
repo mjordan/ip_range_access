@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Drupal 8 Module that provides a Context Condition that checks the user's IP address, and a Context Reaction that denies access to nodes and media. If the Reaction executes, it returns a 403 Access Denied response to the user.
+Drupal 8 Module that provides a Context Condition that checks the user's IP address, and a Context Reaction that denies access to nodes and media. If the Reaction executes, it returns a 403 Access Denied response to the user (or optionally redirect them to a proxy to authenticate before accessing the resource).
 
 This module's primary use case was to provide IP access control to [Islandora](https://islandora.ca/) content, but it can be used without Islandora.
 
