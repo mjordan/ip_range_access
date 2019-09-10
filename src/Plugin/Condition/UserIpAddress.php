@@ -67,12 +67,7 @@ class UserIpAddress extends ConditionPluginBase {
    */
   public function evaluate() {
     $ip = \Drupal::request()->getClientIp();
-    if ($this->isNegated()) {
-      return !$this->checkIp($ip);
-    }
-    else {
-      return $this->checkIp($ip);
-    }
+    return $this->checkIp($ip);
   }
 
   /**
