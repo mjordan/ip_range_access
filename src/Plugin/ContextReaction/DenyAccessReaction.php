@@ -66,7 +66,7 @@ class DenyAccessReaction extends ContextReactionPluginBase {
       '#title' => t('Proxy URL'),
       '#default_value' => $this->configuration['proxy_prepend_url'],
       '#maxlength' => 256,
-      '#description' => t('URL to redirect users to, e.g., an Ezproxy login URL. Leave blank to not redirect user.'),
+      '#description' => t('URL to redirect users to, e.g., an Ezproxy login URL. If you use this option, you should uncheck the "Deny access to node or media" option above. Leave this field blank to not redirect user.'),
     ];
     return $form;
   }
