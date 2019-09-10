@@ -43,7 +43,7 @@ class DenyAccessReaction extends ContextReactionPluginBase {
       throw new AccessDeniedHttpException();
     }
     if (strlen($config['proxy_prepend_url'])) {
-      $current_url = $host = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::service('path.current')->getPath();
+      $current_url = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::service('path.current')->getPath();
       $redirect_url = $config['proxy_prepend_url'] . $current_url;
       $response = new RedirectResponse($redirect_url);
       $response->send();
