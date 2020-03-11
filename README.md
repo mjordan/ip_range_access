@@ -23,7 +23,7 @@ The Condition and Reaction are independent of each other (Context FTW!) but if y
 1. Enter the ranges or individual IP addresses from where access is prohibited.
 1. (Optional) Add additional Conditions ("Node has parent", "Node has term", "User role", etc.). You probably want to add the "User's Role" condition to make sure that administrators aren't blocked from accessing content.
 1. Choose the "Deny access to node or media" Reaction and check the box.
-    * (Optional) Add the URL of a proxy, such as Exproxy, to the reaction's configuration, e.g., `https://proxy.example.com/login?url=`.
+    * (Optional) Add the URL of a proxy, such as Ezproxy, to the reaction's configuration, e.g., `https://proxy.example.com/login?url=`.
 
 ## To do
 
