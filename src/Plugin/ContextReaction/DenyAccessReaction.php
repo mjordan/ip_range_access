@@ -47,7 +47,7 @@ class DenyAccessReaction extends ContextReactionPluginBase {
       $redirect_url = $config['proxy_prepend_url'] . $current_url;
       $response = new RedirectResponse($redirect_url);
       $response->send();
-      return $response;
+      exit;
     }
   }
 
