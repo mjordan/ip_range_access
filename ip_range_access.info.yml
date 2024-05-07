@@ -1,7 +1,7 @@
 name: 'IP Range Access'
 description: "Allows access to entities by IP address range."
 type: module
-package: Islandora
+package: Context
 core_version_requirement: ^9 || ^10
 dependencies:
   - context
