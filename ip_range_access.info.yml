@@ -4,3 +4,4 @@ type: module
 core_version_requirement: ^9 || ^10
 dependencies:
   - context
+version: '1.0.0'
