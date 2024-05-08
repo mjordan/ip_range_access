@@ -67,6 +67,7 @@ class UserIpAddress extends ConditionPluginBase {
    */
   public function evaluate() {
     $ip = \Drupal::request()->getClientIp();
+    \Drupal::logger('ip_range_access')->info("User's IP address is %ip.", ['%ip' => $ip]);
     return $this->checkIp($ip);
   }
 
