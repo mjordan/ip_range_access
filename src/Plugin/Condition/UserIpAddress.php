@@ -67,8 +67,14 @@ class UserIpAddress extends ConditionPluginBase {
    */
   public function evaluate() {
     $ip = \Drupal::request()->getClientIp();
-    \Drupal::logger('ip_range_access')->info("User's IP address is %ip.", ['%ip' => $ip]);
-    return $this->checkIp($ip);
+    $met_condition = $this->checkIp($ip);
+    if ($met_condition) {
+      $met_condition_string = 'Yes';
+    } else {
+      $met_condition_string = 'No';
+    }
+    \Drupal::logger('ip_range_access')->info("User's IP address is %ip. Met condition: %met", ['%ip' => $ip, '%met' => $met_condition_string]);
+    return $met_condition;
   }
 
   /**
