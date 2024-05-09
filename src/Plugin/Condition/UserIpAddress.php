@@ -36,6 +36,12 @@ class UserIpAddress extends ConditionPluginBase {
         'Separate the low and high ends of each range with a colon, e.g. 111.111.111.111:222.222.222.222. ' .
         ' Asterisks are not allowed. Single IP addresses are also allowed, each on its own line.'),
     ];
+    $form['log_requests'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Log user requests'),
+      '#default_value' => $this->configuration['log_requests'],
+      '#description' => $this->t("Log users' requests."),
+    ];
     return parent::buildConfigurationForm($form, $form_state);
   }
 
@@ -45,6 +51,7 @@ class UserIpAddress extends ConditionPluginBase {
   public function defaultConfiguration() {
     return [
       'ip_ranges' => '', 
+      'log_requests' => FALSE,
     ] + parent::defaultConfiguration();
   }
 
@@ -53,6 +60,7 @@ class UserIpAddress extends ConditionPluginBase {
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     $this->configuration['ip_ranges'] = $form_state->getValue('ip_ranges');
+    $this->configuration['log_requests'] = $form_state->getValue('log_requests');
     parent::submitConfigurationForm($form, $form_state);
   }
 
@@ -73,7 +81,9 @@ class UserIpAddress extends ConditionPluginBase {
     } else {
       $met_condition_string = 'No';
     }
-    \Drupal::logger('ip_range_access')->info("User's IP address is %ip. Met condition: %met", ['%ip' => $ip, '%met' => $met_condition_string]);
+    if ($this->configuration['log_requests']) {
+      \Drupal::logger('ip_range_access')->info("User's IP address is %ip. Met condition: %met", ['%ip' => $ip, '%met' => $met_condition_string]);
+    }
     return $met_condition;
   }
 

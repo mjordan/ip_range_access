@@ -4,3 +4,19 @@ condition.plugin.user_ip_address:
     ip_ranges:
       type: text
       label: 'IP ranges'
+    log_requests:
+      type: boolean
+      label: "Log user's IP address and whether or not their request has met this condition."
+
+reaction.plugin.deny_access:
+  type: reaction.plugin
+  mapping:
+    deny_access:
+      type: checkbox 
+      label: 'Deny access'
+    proxy_prepend_url:
+      type: text
+      label: "URL to redirect users to, e.g., an Ezproxy login URL."
+    log_executed:
+      type: checkbox
+      label: "Log that this reaction was executed."
